@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pau Alarcón — Técnico SMX · Estudiante ASIX 2º — Currículum</title>
+<meta name="description" content="Currículum de Pau Alarcón, Técnico en Sistemas Microinformáticos y Redes, estudiante de 2º de ASIX en Catalunya. Soporte, sistemas, redes y bases de datos." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230A192F'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%2322D3EE' font-family='monospace' font-weight='bold'>PA</text></svg>">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="top">
+  <div class="container nav-inner">
+    <a href="#top" class="logo"><span class="logo-box">PA</span> Pau Alarcón <span class="logo-tag">· CV</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#formacion">Formación</a>
+      <a href="#skills">Conocimientos</a>
+      <a href="#labs">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto" class="btn btn-small btn-accent">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" class="icon-btn" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema">◐</button>
+      <button id="printBtn" class="icon-btn" title="Guardar como PDF" aria-label="Imprimir">⎙</button>
+      <button id="menuBtn" class="icon-btn only-mobile" aria-label="Menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <div class="badge-status"><span class="dot"></span> Disponibilidad para prácticas y contrato junior</div>
+      <h1>Pau Alarcón</h1>
+      <h2 class="typing-line"><span class="prompt">></span> <span id="typing"></span><span class="caret">▌</span></h2>
+      <p class="hero-desc">
+        <strong>Técnico en Sistemas Microinformáticos y Redes (SMX)</strong>,
+        actualmente cursando <strong>2º de Administración de Sistemas Informáticos
+        en Red (ASIX)</strong> con 1º superado.
+        Orientación a soporte informático, administración de sistemas Windows y Linux,
+        y redes locales.
+      </p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn btn-accent">Contactar</a>
+        <a href="#formacion" class="btn btn-ghost">Ver formación</a>
+        <button class="btn btn-ghost" id="copyEmailBtn">Copiar email</button>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Ubicación:</strong> <span id="locationText">Blanes, Girona (Catalunya). Movilidad Selva / Maresme. Carnet B y AM.</span></div>
+        <div><strong>Email:</strong> <span id="emailText">pau20470@gmail.com</span></div>
+        <div><strong>Teléfono:</strong> <span>644 562 230</span></div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="profile-card">
+        <div class="profile-top">
+          <img class="avatar-photo" src="foto.jpg" alt="Fotografía profesional de Pau Alarcón" onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='grid';" />
+          <div class="avatar" id="avatarFallback" style="display:none">PA</div>
+          <div>
+            <h3>Pau Alarcón, 19 años</h3>
+            <p>Técnico SMX · Estudiante ASIX 2º</p>
+            <div class="mini-badges"><span class="pill pill-green">Disponibilidad inmediata</span><span class="pill">Inglés B1 Cambridge</span></div>
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="term-bar"><i></i><i></i><i></i><span>perfil — pau</span></div>
+          <div class="term-body">
+            <p><span class="green">$</span> cat titulacion.txt</p>
+            <p class="dim">SMX titulado · ASIX 1º superado · 2º en curso</p>
+            <p><span class="green">$</span> cat especialidad.txt</p>
+            <p class="dim">soporte · sistemas · redes · bases de datos</p>
+          </div>
+        </div>
+        <div class="stats">
+          <div><strong>SMX</strong><span>Título obtenido</span></div>
+          <div><strong>ASIX 1º</strong><span>Superado</span></div>
+          <div><strong>B1</strong><span>Cambridge oficial</span></div>
+          <div><strong>B / AM</strong><span>Carnet</span></div>
+        </div>
+        <div class="profile-actions">
+          <a class="btn btn-primary full" href="#contacto">Solicitar entrevista</a>
+          <div class="row2">
+            <a class="btn btn-ghost small full" href="https://github.com/Tortuanapai" target="_blank" rel="noopener" id="githubBtn">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE MI ===== -->
+<section id="sobre-mi" class="section">
+  <div class="container grid2">
+    <div class="reveal">
+      <p class="kicker">01 — Sobre mí</p>
+      <h2>Perfil profesional</h2>
+      <p class="lead">Soy una persona responsable y trabajadora, con una sólida motivación para aprender y una excelente habilidad para el trabajo en equipo. Estoy en busca de una oportunidad que me permita crecer profesionalmente, donde pueda aportar mi compromiso y dedicación.</p>
+      <div class="values">
+        <div class="value"><div><strong>Soporte técnico</strong><p>Montaje y mantenimiento de equipos, resolución de incidencias y atención al usuario.</p></div></div>
+        <div class="value"><div><strong>Trabajo en equipo</strong><p>Experiencia en proyectos y en entornos laborales con coordinación y responsabilidad.</p></div></div>
+        <div class="value"><div><strong>Formación continua</strong><p>Progresión de SMX a ASIX con base en sistemas, redes y seguridad.</p></div></div>
+      </div>
+    </div>
+    <div class="card highlight reveal photo-card">
+      <h3>Fotografía</h3>
+      <img src="foto.jpg" alt="Fotografía profesional de Pau Alarcón para el currículum" onerror="this.outerHTML='<p class=\'photo-hint\'>Guarda tu foto profesional como <strong>foto.jpg</strong> en esta misma carpeta y aparecerá aquí automáticamente.</p>'" />
+      <p class="photo-caption">Pau Alarcón — Técnico SMX · Estudiante ASIX 2º</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMACIÓN ===== -->
+<section id="formacion" class="section alt">
+  <div class="container">
+    <p class="kicker">02 — Formación académica</p>
+    <h2 class="reveal">Formación oficial en Informática y Comunicaciones</h2>
+    <p class="sub reveal">Ciclos formativos de 2.000 horas según el currículo vigente en Catalunya, con formación en centro y en empresa.</p>
+
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-head"><span class="tag tag-now">En curso · 2026 — 2027</span><span class="t-grade">CFGS</span></div>
+          <h3>Administración de Sistemas Informáticos en Red (ASIX) — 2º curso</h3>
+          <p class="t-school">Ciclo Formativo de Grado Superior · 2.000 h · Primer curso superado</p>
+          <p>Segundo curso en curso: administración de sistemas operativos, servicios de red e Internet, implantación de aplicaciones web, administración de sistemas gestores de bases de datos, seguridad y alta disponibilidad, y proyecto intermodular.</p>
+          <details open>
+            <summary>Contenidos de 1º de ASIX (superado)</summary>
+            <div class="mods">
+              <div><strong>Implantación de sistemas operativos</strong><p>Windows Server y Active Directory: unidades organizativas, usuarios y equipos, directivas de grupo, permisos NTFS y recursos compartidos. Linux, virtualización y scripting.</p></div>
+              <div><strong>Planificación y administración de redes</strong><p>TCP/IP, direccionamiento IPv4/IPv6, VLAN, STP, encaminamiento estático y dinámico (RIP), NAT, DHCP y DNS. Configuración en Packet Tracer y análisis con Wireshark.</p></div>
+              <div><strong>Gestión de bases de datos</strong><p>Modelo entidad-relación, normalización, SQL en PostgreSQL, gestión de usuarios y roles, permisos, seguridad y copias de seguridad.</p></div>
+              <div><strong>Lenguajes de marcas</strong><p>HTML5, CSS3, XML, JSON, validación y control de versiones con Git.</p></div>
+              <div><strong>Programación básica</strong><p>Fundamentos: lógica, variables, condicionales, bucles y funciones.</p></div>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-dot done"></div>
+        <div class="t-card">
+          <div class="t-head"><span class="tag tag-done">Titulado</span><span class="t-grade">CFGM</span></div>
+          <h3>Técnico en Sistemas Microinformáticos y Redes (SMX)</h3>
+          <p class="t-school">Ciclo Formativo de Grado Medio · 2.000 h · Título oficial</p>
+          <p>Instalación y mantenimiento de equipos y redes locales en pequeños entornos, y soporte al usuario.</p>
+          <details>
+            <summary>Contenidos de SMX</summary>
+            <div class="mods">
+              <div><strong>Montaje y mantenimiento de equipos</strong><p>Ensamblaje, diagnóstico, ampliación y periféricos.</p></div>
+              <div><strong>Sistemas operativos</strong><p>Instalación y administración monopuesto y en red (Windows y Linux).</p></div>
+              <div><strong>Redes locales y servicios</strong><p>Cableado, direccionamiento IP, DNS, DHCP, FTP, HTTP y correo.</p></div>
+              <div><strong>Seguridad y aplicaciones</strong><p>Protección del puesto, copias de seguridad, ofimática y aplicaciones web.</p></div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONOCIMIENTOS ===== -->
+<section id="skills" class="section">
+  <div class="container">
+    <p class="kicker">03 — Conocimientos técnicos</p>
+    <h2 class="reveal">Competencias técnicas</h2>
+    <p class="sub reveal">Redes, sistemas y seguridad. Hardware, programación y desarrollo web.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>Sistemas</h3>
+        <div class="bar"><label>Windows cliente: instalación y soporte</label><div class="track"><div class="fill" data-level="90"></div></div></div>
+        <div class="bar"><label>Windows Server y Active Directory</label><div class="track"><div class="fill" data-level="88"></div></div></div>
+        <div class="bar"><label>Linux: administración por terminal</label><div class="track"><div class="fill" data-level="80"></div></div></div>
+        <div class="bar"><label>Virtualización: VirtualBox / VMware</label><div class="track"><div class="fill" data-level="85"></div></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Redes</h3>
+        <div class="bar"><label>TCP/IP, direccionamiento IPv4/IPv6, DHCP y DNS</label><div class="track"><div class="fill" data-level="92"></div></div></div>
+        <div class="bar"><label>VLAN, STP, RIP y NAT</label><div class="track"><div class="fill" data-level="94"></div></div></div>
+        <div class="bar"><label>Cisco Packet Tracer y Wireshark</label><div class="track"><div class="fill" data-level="88"></div></div></div>
+        <div class="bar"><label>Cableado estructurado y redes inalámbricas</label><div class="track"><div class="fill" data-level="85"></div></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Bases de datos y desarrollo — en desarrollo</h3>
+        <div class="bar"><label>SQL y PostgreSQL, incl. seguridad</label><div class="track"><div class="fill" data-level="80"></div></div></div>
+        <div class="bar"><label>HTML5 y CSS3</label><div class="track"><div class="fill" data-level="60"></div></div></div>
+        <div class="bar"><label>Programación</label><div class="track"><div class="fill" data-level="55"></div></div></div>
+        <div class="bar"><label>Git</label><div class="track"><div class="fill" data-level="60"></div></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Soporte y seguridad</h3>
+        <div class="bar"><label>Resolución de incidencias y atención al usuario</label><div class="track"><div class="fill" data-level="88"></div></div></div>
+        <div class="bar"><label>Imágenes, clonación y copias de seguridad</label><div class="track"><div class="fill" data-level="85"></div></div></div>
+        <div class="bar"><label>Seguridad: permisos, usuarios, antivirus y cortafuegos</label><div class="track"><div class="fill" data-level="85"></div></div></div>
+        <div class="bar"><label>Diagnóstico de hardware</label><div class="track"><div class="fill" data-level="65"></div></div></div>
+      </div>
+    </div>
+
+    <div class="toolbox reveal">
+      <h3>Herramientas</h3>
+      <div class="badges">
+        <span>Windows</span><span>Windows Server</span><span>Active Directory</span><span>Linux</span><span>VirtualBox</span><span>VMware</span><span>Packet Tracer</span><span>Wireshark</span><span>PostgreSQL</span><span>pgAdmin</span><span>Git</span><span>VS Code</span><span>Programación básica</span><span>Apache</span><span>Office 365</span><span>Clonezilla</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROYECTOS ===== -->
+<section id="labs" class="section alt">
+  <div class="container">
+    <p class="kicker">04 — Proyectos académicos</p>
+    <h2 class="reveal">Prácticas realizadas durante la formación</h2>
+    <div class="labs-grid">
+      <article class="lab reveal"><div class="lab-top">Redes</div><h3>Red con VLAN, STP, RIP y NAT</h3><p>Configuración de VLAN, STP, encaminamiento RIP, NAT, DHCP/DNS y comprobación de conectividad.</p></article>
+      <article class="lab reveal"><div class="lab-top">Sistemas Windows</div><h3>Dominio con Active Directory</h3><p>Unidades organizativas, usuarios y equipos, directivas de grupo, permisos NTFS y recursos compartidos.</p></article>
+      <article class="lab reveal"><div class="lab-top">Bases de datos</div><h3>Base de datos para un hospital (PostgreSQL)</h3><p>Diseño entidad-relación, tablas, usuarios y roles, permisos, seguridad y copias de seguridad. <a href="https://github.com/Tortuanapai" target="_blank" rel="noopener">Ver en GitHub</a></p></article>
+      <article class="lab reveal"><div class="lab-top">Desarrollo web</div><h3>Sitio web responsive</h3><p>Maquetación con HTML5 y CSS3 y publicación de contenidos con gestor CMS.</p></article>
+      <article class="lab reveal"><div class="lab-top">Soporte</div><h3>Mantenimiento de equipos</h3><p>Diagnóstico de hardware, instalación y clonación de sistemas.</p></article>
+      <article class="lab reveal lab-github"><div class="lab-top">GitHub</div><h3>Mis proyectos en GitHub</h3><p>Repositorios y prácticas publicadas.</p><a class="btn btn-ghost small" href="https://github.com/Tortuanapai" target="_blank" rel="noopener">github.com/Tortuanapai</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCIA ===== -->
+<section id="experiencia" class="section">
+  <div class="container grid2">
+    <div class="reveal">
+      <p class="kicker">05 — Experiencia e idiomas</p>
+      <h2>Experiencia laboral</h2>
+      <div class="exp-card">
+        <h3>Formación en Centros de Trabajo (FCT) — SMX · Acerko, Lloret de Mar</h3>
+        <p>Prácticas en empresa: resolución de incidencias, mantenimiento preventivo y preparación de equipos.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="card">
+        <h3>Idiomas</h3>
+        <div class="lang-row"><div><strong>Catalán</strong> — Nativo</div><div class="track"><div class="fill" data-level="100"></div></div></div>
+        <div class="lang-row"><div><strong>Español</strong> — Nativo</div><div class="track"><div class="fill" data-level="100"></div></div></div>
+        <div class="lang-row"><div><strong>Inglés</strong> — B1 Cambridge (oficial)</div><div class="track"><div class="fill" data-level="65"></div></div></div>
+        <hr>
+        <h3>Permisos de conducción</h3>
+        <div class="permits"><span>Carnet AM</span><span>Carnet B</span><span>Movilidad inmediata</span></div>
+        <hr>
+        <h3>Competencias personales</h3>
+        <div class="soft-grid">
+          <span>Responsabilidad</span><span>Trabajo en equipo</span><span>Comunicación</span><span>Organización</span><span>Resolución de incidencias</span><span>Orientación al usuario</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto" class="section cta">
+  <div class="container cta-box reveal">
+    <p class="kicker light">06 — Contacto</p>
+    <h2>Contacto profesional</h2>
+    <p>Disponibilidad inmediata, compatible con los estudios de 2º de ASIX. Zona: Blanes, Girona y comarcas de Selva y Maresme. Posibilidad de trabajo en remoto para soporte.</p>
+    <div class="cta-btns">
+      <a class="btn btn-accent big" href="mailto:pau20470@gmail.com?subject=Candidatura%20Técnico%20IT%20—%20Pau%20Alarcón">pau20470@gmail.com</a>
+      <a class="btn btn-light big" href="tel:+34644562230">644 562 230</a>
+    </div>
+    <div class="cta-row">
+      <span>SMX titulado · ASIX 2º en curso</span>
+    </div>
+    <p class="cta-github">GitHub: <a href="https://github.com/Tortuanapai" target="_blank" rel="noopener">github.com/Tortuanapai</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <span>© <span id="year"></span> Pau Alarcón — Currículum</span>
+    <span class="mono">SMX · ASIX · Sistemas · Redes</span>
+    <a href="#top">Volver arriba</a>
+  </div>
+</footer>
+
+<button id="toTop" title="Subir">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
