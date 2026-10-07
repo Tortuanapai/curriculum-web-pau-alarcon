@@ -78,36 +78,43 @@
   <symbol id="i-terminal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.2" width="18.4" height="15.6" rx="2"/><path d="m7 9.5 3 2.5-3 2.5M12.6 15.2h4.6"/></g></symbol>
 </svg>
 
-<a class="skip" href="#inicio">Saltar al contenido</a>
+<a class="skip" href="#inicio" data-i18n="skip">Saltar al contenido</a>
 <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
 <!-- ============ RAIL / ÍNDICE ============ -->
-<aside class="rail" aria-label="Índice del currículum">
-  <a class="rail-mark" href="#inicio" aria-label="Inicio">
-    <span class="mark-dot" aria-hidden="true"></span>
-    <span class="mark-name">Pau<br />Alarcón</span>
-  </a>
+<aside class="rail" aria-label="Índice del currículum" data-i18n-attr="aria-label:rail.label">
+  <div class="rail-top">
+    <a class="rail-mark" href="#inicio" aria-label="Inicio" data-i18n-attr="aria-label:home">
+      <span class="mark-dot" aria-hidden="true"></span>
+      <span class="mark-name">Pau<br />Alarcón</span>
+    </a>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+      <button type="button" data-lang="es" lang="es" aria-label="Castellano" aria-pressed="true">ES</button>
+      <button type="button" data-lang="ca" lang="ca" aria-label="Català" aria-pressed="false">CA</button>
+      <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    </div>
+  </div>
 
   <nav class="rail-nav">
     <ol>
-      <li><a href="#perfil" data-num="01">Perfil</a></li>
-      <li><a href="#experiencia" data-num="02">Experiencia</a></li>
-      <li><a href="#formacion" data-num="03">Formación</a></li>
-      <li><a href="#competencias" data-num="04">Competencias</a></li>
-      <li><a href="#proyectos" data-num="05">Proyectos</a></li>
-      <li><a href="#contacto" data-num="06">Contacto</a></li>
+      <li><a href="#perfil" data-num="01" data-i18n="nav.perfil">Perfil</a></li>
+      <li><a href="#experiencia" data-num="02" data-i18n="nav.experiencia">Experiencia</a></li>
+      <li><a href="#formacion" data-num="03" data-i18n="nav.formacion">Formación</a></li>
+      <li><a href="#competencias" data-num="04" data-i18n="nav.competencias">Competencias</a></li>
+      <li><a href="#proyectos" data-num="05" data-i18n="nav.proyectos">Proyectos</a></li>
+      <li><a href="#contacto" data-num="06" data-i18n="nav.contacto">Contacto</a></li>
     </ol>
   </nav>
 
   <div class="rail-foot">
     <button class="chip" id="paletteOpen" aria-haspopup="dialog">
-      <span>Buscar</span><kbd>Ctrl</kbd><kbd>K</kbd>
+      <span data-i18n="search">Buscar</span><kbd>Ctrl</kbd><kbd>K</kbd>
     </button>
     <div class="rail-icons">
-      <button class="icon" id="themeBtn" aria-label="Cambiar tema claro u oscuro" title="Tema">
+      <button class="icon" id="themeBtn" aria-label="Cambiar tema claro u oscuro" title="Tema" data-i18n-attr="aria-label:theme.toggle,title:theme.title">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
       </button>
-      <button class="icon" id="printBtn" aria-label="Descargar en PDF" title="PDF">
+      <button class="icon" id="printBtn" aria-label="Descargar en PDF" title="PDF" data-i18n-attr="aria-label:pdf.download">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
       </button>
     </div>
@@ -118,10 +125,15 @@
 <header class="topbar">
   <a class="topbar-name" href="#inicio"><span class="mark-dot" aria-hidden="true"></span> Pau Alarcón</a>
   <div class="topbar-actions">
-    <button class="icon" id="paletteOpenM" aria-label="Buscar en el currículum" aria-haspopup="dialog">
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+      <button type="button" data-lang="es" lang="es" aria-label="Castellano" aria-pressed="true">ES</button>
+      <button type="button" data-lang="ca" lang="ca" aria-label="Català" aria-pressed="false">CA</button>
+      <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    </div>
+    <button class="icon" id="paletteOpenM" aria-label="Buscar en el currículum" data-i18n-attr="aria-label:search.cv" aria-haspopup="dialog">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
     </button>
-    <button class="icon" id="themeBtnM" aria-label="Cambiar tema claro u oscuro">
+    <button class="icon" id="themeBtnM" aria-label="Cambiar tema claro u oscuro" data-i18n-attr="aria-label:theme.toggle">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
     </button>
   </div>
@@ -135,7 +147,7 @@
 
   <div class="hero-top">
     <div class="hero-title">
-      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Becario IT en <strong>HardySoft</strong> · Palafolls</p>
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> <span data-i18n="hero.eyebrow">Becario IT en <strong>HardySoft</strong> · Palafolls</span></p>
 
       <h1 class="display">
         <span class="line"><span class="w">Pau</span></span>
@@ -146,30 +158,30 @@
     <figure class="portrait">
       <picture>
         <source srcset="foto.webp" type="image/webp" />
-        <img src="foto.jpg" width="640" height="800" alt="Retrato de Pau Alarcón" fetchpriority="high" />
+        <img src="foto.jpg" width="640" height="800" alt="Retrato de Pau Alarcón" data-i18n-attr="alt:hero.portrait" fetchpriority="high" />
       </picture>
-      <figcaption><span class="pulse" aria-hidden="true"></span> Becario IT · HardySoft</figcaption>
+      <figcaption><span class="pulse" aria-hidden="true"></span> <span data-i18n="hero.caption">Becario IT · HardySoft</span></figcaption>
     </figure>
   </div>
 
   <div class="hero-grid">
     <div class="hero-lead">
-      <p class="role">Técnico en Sistemas y Redes <span class="sep">/</span> estudiante de <strong>2º de ASIX</strong>.</p>
-      <p class="lead">Soporte, sistemas Windows y Linux, y redes. Ahora aprendo cada día en una consultora IT que da servicio a pymes de toda Catalunya.</p>
+      <p class="role" data-i18n="hero.role">Técnico en Sistemas y Redes <span class="sep">/</span> estudiante de <strong>2º de ASIX</strong>.</p>
+      <p class="lead" data-i18n="hero.lead">Soporte, sistemas Windows y Linux, y redes. Ahora aprendo cada día en una consultora IT que da servicio a pymes de toda Catalunya.</p>
       <div class="hero-cta">
-        <a class="btn btn-solid" href="#contacto">Hablemos <span aria-hidden="true">→</span></a>
-        <button class="btn btn-line" data-copy="pau20470@gmail.com">Copiar email</button>
+        <a class="btn btn-solid" href="#contacto" data-i18n="cta.talk">Hablemos <span aria-hidden="true">→</span></a>
+        <button class="btn btn-line" data-copy="pau20470@gmail.com" data-i18n="cta.copy">Copiar email</button>
         <a class="btn btn-line" href="https://www.linkedin.com/in/pau-alarcon-ruiz-4a1424437/" target="_blank" rel="noopener"><svg class="ico i-linkedin" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn ↗</a>
         <a class="btn btn-line" href="https://github.com/Tortuanapai" target="_blank" rel="noopener"><svg class="ico i-github" aria-hidden="true"><use href="#i-github"/></svg> GitHub ↗</a>
       </div>
     </div>
   </div>
 
-  <ul class="facts" aria-label="Datos destacados">
-    <li><strong>SMX</strong><span>Titulado</span></li>
-    <li><strong>ASIX</strong><span>2º en curso</span></li>
-    <li><strong>HardySoft</strong><span>Becario IT</span></li>
-    <li><strong>B1</strong><span>Inglés Cambridge</span></li>
+  <ul class="facts" aria-label="Datos destacados" data-i18n-attr="aria-label:facts.label">
+    <li><strong>SMX</strong><span data-i18n="state.graduated">Titulado</span></li>
+    <li><strong>ASIX</strong><span data-i18n="facts.asix">2º en curso</span></li>
+    <li><strong>HardySoft</strong><span data-i18n="role.intern">Becario IT</span></li>
+    <li><strong>B1</strong><span data-i18n="facts.english">Inglés Cambridge</span></li>
   </ul>
 </section>
 
@@ -177,36 +189,36 @@
 <section id="perfil" class="band">
   <header class="band-head">
     <p class="num">01</p>
-    <h2>Perfil</h2>
+    <h2 data-i18n="nav.perfil">Perfil</h2>
   </header>
 
   <div class="band-body cols">
     <div>
-      <p class="statement">Responsable, constante y con ganas de aprender. Me gusta entender por qué falla algo, arreglarlo y dejarlo documentado.</p>
+      <p class="statement" data-i18n="profile.statement">Responsable, constante y con ganas de aprender. Me gusta entender por qué falla algo, arreglarlo y dejarlo documentado.</p>
 
       <ul class="langs">
-        <li><span>Catalán</span><em>Nativo</em></li>
-        <li><span>Español</span><em>Nativo</em></li>
-        <li><span>Inglés</span><em>B1 Cambridge</em></li>
-        <li><span>Carnet</span><em>B y AM</em></li>
+        <li><span data-i18n="lang.ca">Catalán</span><em data-i18n="lang.native">Nativo</em></li>
+        <li><span data-i18n="lang.es">Español</span><em data-i18n="lang.native">Nativo</em></li>
+        <li><span data-i18n="lang.en">Inglés</span><em>B1 Cambridge</em></li>
+        <li><span data-i18n="licence">Carnet</span><em data-i18n="licence.types">B y AM</em></li>
       </ul>
     </div>
 
     <ul class="pillars">
       <li class="spot">
         <span class="pillar-num"><svg class="ico" aria-hidden="true"><use href="#i-support"/></svg></span>
-        <h3>Soporte técnico</h3>
-        <p>Incidencias, montaje y mantenimiento de equipos, y trato directo con el usuario.</p>
+        <h3 data-i18n="pillar.support">Soporte técnico</h3>
+        <p data-i18n="pillar.support.txt">Incidencias, montaje y mantenimiento de equipos, y trato directo con el usuario.</p>
       </li>
       <li class="spot">
         <span class="pillar-num"><svg class="ico" aria-hidden="true"><use href="#i-net"/></svg></span>
-        <h3>Sistemas y redes</h3>
-        <p>Windows Server, Active Directory, Linux, VLAN y servicios de red.</p>
+        <h3 data-i18n="pillar.sysnet">Sistemas y redes</h3>
+        <p data-i18n="pillar.sysnet.txt">Windows Server, Active Directory, Linux, VLAN y servicios de red.</p>
       </li>
       <li class="spot">
         <span class="pillar-num"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span>
-        <h3>Seguridad</h3>
-        <p>Permisos, copias de seguridad y protección del puesto de trabajo.</p>
+        <h3 data-i18n="security">Seguridad</h3>
+        <p data-i18n="pillar.security.txt">Permisos, copias de seguridad y protección del puesto de trabajo.</p>
       </li>
     </ul>
   </div>
@@ -216,7 +228,7 @@
 <section id="experiencia" class="band alt">
   <header class="band-head">
     <p class="num">02</p>
-    <h2>Experiencia</h2>
+    <h2 data-i18n="nav.experiencia">Experiencia</h2>
   </header>
 
   <div class="band-body">
@@ -224,18 +236,18 @@
       <li class="tl-item tl-now">
         <article class="xp-card xp-feature spot">
           <div class="xp-top">
-            <span class="state state-now"><span class="pulse" aria-hidden="true"></span> Ahora</span>
+            <span class="state state-now"><span class="pulse" aria-hidden="true"></span> <span data-i18n="state.now">Ahora</span></span>
             <span class="xp-place">Palafolls, Barcelona</span>
           </div>
-          <h3>Becario IT</h3>
+          <h3 data-i18n="role.intern">Becario IT</h3>
           <p class="job-org"><a href="https://www.hardysoft.es/" target="_blank" rel="noopener">HardySoft · Hard &amp; Soft Consultors Tecnològics ↗</a></p>
-          <p class="xp-about">Consultora IT que da soporte integral a pymes de Catalunya: sistemas, redes, ciberseguridad y software a medida.</p>
+          <p class="xp-about" data-i18n="xp.hardysoft">Consultora IT que da soporte integral a pymes de Catalunya: sistemas, redes, ciberseguridad y software a medida.</p>
 
           <ul class="xp-tasks">
-            <li><svg class="ico" aria-hidden="true"><use href="#i-support"/></svg><p><strong>Soporte a clientes</strong> en remoto y presencial: gestión de incidencias y atención al usuario.</p></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg><p><strong>Redes</strong>: apoyo en la instalación de equipos Ubiquiti, Fortinet y TP-Link, WiFi corporativa y VPN.</p></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg><p><strong>Sistemas</strong>: Windows Server, Linux, Microsoft 365 y virtualización con VMware.</p></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><p><strong>Seguridad</strong>: copias de seguridad, antivirus y mantenimiento preventivo de equipos.</p></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-support"/></svg><p data-i18n="xp.task1"><strong>Soporte a clientes</strong> en remoto y presencial: gestión de incidencias y atención al usuario.</p></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg><p data-i18n="xp.task2"><strong>Redes</strong>: apoyo en la instalación de equipos Ubiquiti, Fortinet y TP-Link, WiFi corporativa y VPN.</p></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg><p data-i18n="xp.task3"><strong>Sistemas</strong>: Windows Server, Linux, Microsoft 365 y virtualización con VMware.</p></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><p data-i18n="xp.task4"><strong>Seguridad</strong>: copias de seguridad, antivirus y mantenimiento preventivo de equipos.</p></li>
           </ul>
 
           <ul class="w-stack">
@@ -251,12 +263,12 @@
       <li class="tl-item">
         <article class="xp-card spot">
           <div class="xp-top">
-            <span class="state state-done">Prácticas SMX</span>
+            <span class="state state-done" data-i18n="xp.smx">Prácticas SMX</span>
             <span class="xp-place">Lloret de Mar</span>
           </div>
-          <h3>Técnico de soporte en prácticas</h3>
+          <h3 data-i18n="xp.acerko.role">Técnico de soporte en prácticas</h3>
           <p class="job-org">Acerko</p>
-          <p class="xp-about">Resolución de incidencias, mantenimiento preventivo y preparación de equipos.</p>
+          <p class="xp-about" data-i18n="xp.acerko">Resolución de incidencias, mantenimiento preventivo y preparación de equipos.</p>
         </article>
       </li>
     </ol>
@@ -267,34 +279,34 @@
 <section id="formacion" class="band">
   <header class="band-head">
     <p class="num">03</p>
-    <h2>Formación</h2>
+    <h2 data-i18n="nav.formacion">Formación</h2>
   </header>
 
   <div class="band-body edu">
     <article class="ledger spot">
       <div class="ledger-when">
         <span class="when-years">2026 — 2027</span>
-        <span class="state state-now">En curso</span>
+        <span class="state state-now" data-i18n="state.ongoing">En curso</span>
       </div>
       <div class="ledger-what">
-        <p class="ledger-kind">Grado Superior</p>
-        <h3>Administración de Sistemas Informáticos en Red <span class="ledger-tag">ASIX · 2º</span></h3>
+        <p class="ledger-kind" data-i18n="edu.higher">Grado Superior</p>
+        <h3 data-i18n="edu.asix">Administración de Sistemas Informáticos en Red <span class="ledger-tag">ASIX · 2º</span></h3>
         <ul class="tags">
-          <li>Windows Server y AD</li><li>Linux</li><li>Redes y VLAN</li><li>PostgreSQL</li><li>Seguridad</li><li>Servicios web</li>
+          <li data-i18n="tag.winad">Windows Server y AD</li><li>Linux</li><li data-i18n="tag.netvlan">Redes y VLAN</li><li>PostgreSQL</li><li data-i18n="security">Seguridad</li><li data-i18n="tag.web">Servicios web</li>
         </ul>
       </div>
     </article>
 
     <article class="ledger spot">
       <div class="ledger-when">
-        <span class="when-years">Título oficial</span>
-        <span class="state state-done">Titulado</span>
+        <span class="when-years" data-i18n="edu.official">Título oficial</span>
+        <span class="state state-done" data-i18n="state.graduated">Titulado</span>
       </div>
       <div class="ledger-what">
-        <p class="ledger-kind">Grado Medio</p>
-        <h3>Sistemas Microinformáticos y Redes <span class="ledger-tag">SMX</span></h3>
+        <p class="ledger-kind" data-i18n="edu.mid">Grado Medio</p>
+        <h3 data-i18n="edu.smx">Sistemas Microinformáticos y Redes <span class="ledger-tag">SMX</span></h3>
         <ul class="tags">
-          <li>Montaje de equipos</li><li>Sistemas operativos</li><li>Redes locales</li><li>Soporte al usuario</li>
+          <li data-i18n="tag.assembly">Montaje de equipos</li><li data-i18n="tag.os">Sistemas operativos</li><li data-i18n="tag.lan">Redes locales</li><li data-i18n="tag.usersupport">Soporte al usuario</li>
         </ul>
       </div>
     </article>
@@ -305,54 +317,54 @@
 <section id="competencias" class="band alt">
   <header class="band-head">
     <p class="num">04</p>
-    <h2>Competencias</h2>
+    <h2 data-i18n="nav.competencias">Competencias</h2>
   </header>
 
   <div class="band-body">
     <div class="matrix">
       <section class="matrix-col spot">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg> Sistemas</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg> <span data-i18n="skills.sys">Sistemas</span></h3>
         <ul>
-          <li data-level="90"><span class="sk-row"><svg class="ico i-windows" aria-hidden="true"><use href="#i-windows"/></svg><span class="sk">Windows: instalación y soporte</span></span></li>
-          <li data-level="88"><span class="sk-row"><svg class="ico i-server" aria-hidden="true"><use href="#i-server"/></svg><span class="sk">Windows Server y Active Directory</span></span></li>
-          <li data-level="80"><span class="sk-row"><svg class="ico i-linux" aria-hidden="true"><use href="#i-linux"/></svg><span class="sk">Linux por terminal</span></span></li>
-          <li data-level="85"><span class="sk-row"><svg class="ico i-vmware" aria-hidden="true"><use href="#i-vmware"/></svg><span class="sk">Virtualización: VMware y VirtualBox</span></span></li>
+          <li data-level="90"><span class="sk-row"><svg class="ico i-windows" aria-hidden="true"><use href="#i-windows"/></svg><span class="sk" data-i18n="sk.win">Windows: instalación y soporte</span></span></li>
+          <li data-level="88"><span class="sk-row"><svg class="ico i-server" aria-hidden="true"><use href="#i-server"/></svg><span class="sk" data-i18n="sk.winad">Windows Server y Active Directory</span></span></li>
+          <li data-level="80"><span class="sk-row"><svg class="ico i-linux" aria-hidden="true"><use href="#i-linux"/></svg><span class="sk" data-i18n="sk.linux">Linux por terminal</span></span></li>
+          <li data-level="85"><span class="sk-row"><svg class="ico i-vmware" aria-hidden="true"><use href="#i-vmware"/></svg><span class="sk" data-i18n="sk.virt">Virtualización: VMware y VirtualBox</span></span></li>
         </ul>
       </section>
 
       <section class="matrix-col spot">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-net"/></svg> Redes</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-net"/></svg> <span data-i18n="skills.net">Redes</span></h3>
         <ul>
-          <li data-level="92"><span class="sk-row"><svg class="ico i-globe" aria-hidden="true"><use href="#i-globe"/></svg><span class="sk">TCP/IP, DHCP y DNS</span></span></li>
-          <li data-level="94"><span class="sk-row"><svg class="ico i-net" aria-hidden="true"><use href="#i-net"/></svg><span class="sk">VLAN, STP, RIP y NAT</span></span></li>
-          <li data-level="88"><span class="sk-row"><svg class="ico i-wireshark" aria-hidden="true"><use href="#i-wireshark"/></svg><span class="sk">Packet Tracer y Wireshark</span></span></li>
-          <li data-level="85"><span class="sk-row"><svg class="ico i-wifi" aria-hidden="true"><use href="#i-wifi"/></svg><span class="sk">Cableado y redes WiFi</span></span></li>
+          <li data-level="92"><span class="sk-row"><svg class="ico i-globe" aria-hidden="true"><use href="#i-globe"/></svg><span class="sk" data-i18n="sk.tcpip">TCP/IP, DHCP y DNS</span></span></li>
+          <li data-level="94"><span class="sk-row"><svg class="ico i-net" aria-hidden="true"><use href="#i-net"/></svg><span class="sk" data-i18n="sk.vlan">VLAN, STP, RIP y NAT</span></span></li>
+          <li data-level="88"><span class="sk-row"><svg class="ico i-wireshark" aria-hidden="true"><use href="#i-wireshark"/></svg><span class="sk" data-i18n="sk.pt">Packet Tracer y Wireshark</span></span></li>
+          <li data-level="85"><span class="sk-row"><svg class="ico i-wifi" aria-hidden="true"><use href="#i-wifi"/></svg><span class="sk" data-i18n="sk.wifi">Cableado y redes WiFi</span></span></li>
         </ul>
       </section>
 
       <section class="matrix-col spot">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Soporte y seguridad</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> <span data-i18n="skills.support">Soporte y seguridad</span></h3>
         <ul>
-          <li data-level="88"><span class="sk-row"><svg class="ico i-support" aria-hidden="true"><use href="#i-support"/></svg><span class="sk">Incidencias y atención al usuario</span></span></li>
-          <li data-level="85"><span class="sk-row"><svg class="ico i-disk" aria-hidden="true"><use href="#i-disk"/></svg><span class="sk">Clonación y copias de seguridad</span></span></li>
-          <li data-level="85"><span class="sk-row"><svg class="ico i-shield" aria-hidden="true"><use href="#i-shield"/></svg><span class="sk">Permisos, antivirus y cortafuegos</span></span></li>
-          <li data-level="65"><span class="sk-row"><svg class="ico i-chip" aria-hidden="true"><use href="#i-chip"/></svg><span class="sk">Diagnóstico de hardware</span></span></li>
+          <li data-level="88"><span class="sk-row"><svg class="ico i-support" aria-hidden="true"><use href="#i-support"/></svg><span class="sk" data-i18n="sk.incidents">Incidencias y atención al usuario</span></span></li>
+          <li data-level="85"><span class="sk-row"><svg class="ico i-disk" aria-hidden="true"><use href="#i-disk"/></svg><span class="sk" data-i18n="sk.backup">Clonación y copias de seguridad</span></span></li>
+          <li data-level="85"><span class="sk-row"><svg class="ico i-shield" aria-hidden="true"><use href="#i-shield"/></svg><span class="sk" data-i18n="sk.perms">Permisos, antivirus y cortafuegos</span></span></li>
+          <li data-level="65"><span class="sk-row"><svg class="ico i-chip" aria-hidden="true"><use href="#i-chip"/></svg><span class="sk" data-i18n="sk.hw">Diagnóstico de hardware</span></span></li>
         </ul>
       </section>
 
       <section class="matrix-col spot">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-db"/></svg> Datos y desarrollo</h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-db"/></svg> <span data-i18n="skills.data">Datos y desarrollo</span></h3>
         <ul>
-          <li data-level="80"><span class="sk-row"><svg class="ico i-postgresql" aria-hidden="true"><use href="#i-postgresql"/></svg><span class="sk">SQL y PostgreSQL</span></span></li>
-          <li data-level="60"><span class="sk-row"><svg class="ico i-html5" aria-hidden="true"><use href="#i-html5"/></svg><span class="sk">HTML5 y CSS3</span></span></li>
+          <li data-level="80"><span class="sk-row"><svg class="ico i-postgresql" aria-hidden="true"><use href="#i-postgresql"/></svg><span class="sk" data-i18n="sk.sql">SQL y PostgreSQL</span></span></li>
+          <li data-level="60"><span class="sk-row"><svg class="ico i-html5" aria-hidden="true"><use href="#i-html5"/></svg><span class="sk" data-i18n="sk.html">HTML5 y CSS3</span></span></li>
           <li data-level="60"><span class="sk-row"><svg class="ico i-git" aria-hidden="true"><use href="#i-git"/></svg><span class="sk">Git</span></span></li>
-          <li data-level="55"><span class="sk-row"><svg class="ico i-code" aria-hidden="true"><use href="#i-code"/></svg><span class="sk">Programación</span></span></li>
+          <li data-level="55"><span class="sk-row"><svg class="ico i-code" aria-hidden="true"><use href="#i-code"/></svg><span class="sk" data-i18n="sk.prog">Programación</span></span></li>
         </ul>
       </section>
     </div>
 
     <div class="tools">
-      <h3 class="tools-title">Herramientas</h3>
+      <h3 class="tools-title" data-i18n="tools">Herramientas</h3>
       <div class="tools-track">
         <ul class="tools-list">
           <li><svg class="ico i-windows" aria-hidden="true"><use href="#i-windows"/></svg><span>Windows</span></li>
@@ -380,7 +392,7 @@
 <section id="proyectos" class="band">
   <header class="band-head">
     <p class="num">05</p>
-    <h2>Proyectos</h2>
+    <h2 data-i18n="nav.proyectos">Proyectos</h2>
   </header>
 
   <div class="band-body">
@@ -389,12 +401,12 @@
         <details>
           <summary>
             <span class="w-idx">01</span>
-            <span class="w-title">Red con VLAN, STP, RIP y NAT</span>
-            <span class="w-area">Redes</span>
+            <span class="w-title" data-i18n="p1.title">Red con VLAN, STP, RIP y NAT</span>
+            <span class="w-area" data-i18n="skills.net">Redes</span>
             <span class="w-plus" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
-            <p>VLAN, STP, encaminamiento RIP, NAT, DHCP y DNS, con pruebas de conectividad extremo a extremo.</p>
+            <p data-i18n="p1.txt">VLAN, STP, encaminamiento RIP, NAT, DHCP y DNS, con pruebas de conectividad extremo a extremo.</p>
             <ul class="w-stack"><li><svg class="ico i-cisco" aria-hidden="true"><use href="#i-cisco"/></svg><span>Packet Tracer</span></li><li><svg class="ico i-wireshark" aria-hidden="true"><use href="#i-wireshark"/></svg><span>Wireshark</span></li><li><svg class="ico i-globe" aria-hidden="true"><use href="#i-globe"/></svg><span>IPv4 / IPv6</span></li></ul>
           </div>
         </details>
@@ -403,12 +415,12 @@
         <details>
           <summary>
             <span class="w-idx">02</span>
-            <span class="w-title">Dominio con Active Directory</span>
-            <span class="w-area">Sistemas Windows</span>
+            <span class="w-title" data-i18n="p2.title">Dominio con Active Directory</span>
+            <span class="w-area" data-i18n="p2.area">Sistemas Windows</span>
             <span class="w-plus" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
-            <p>Unidades organizativas, usuarios, directivas de grupo, permisos NTFS y recursos compartidos.</p>
+            <p data-i18n="p2.txt">Unidades organizativas, usuarios, directivas de grupo, permisos NTFS y recursos compartidos.</p>
             <ul class="w-stack"><li><svg class="ico i-server" aria-hidden="true"><use href="#i-server"/></svg><span>Windows Server</span></li><li><svg class="ico i-ad" aria-hidden="true"><use href="#i-ad"/></svg><span>Active Directory</span></li><li><svg class="ico i-shield" aria-hidden="true"><use href="#i-shield"/></svg><span>GPO</span></li><li><svg class="ico i-folder" aria-hidden="true"><use href="#i-folder"/></svg><span>NTFS</span></li></ul>
           </div>
         </details>
@@ -417,14 +429,14 @@
         <details>
           <summary>
             <span class="w-idx">03</span>
-            <span class="w-title">Base de datos para un hospital</span>
-            <span class="w-area">Bases de datos</span>
+            <span class="w-title" data-i18n="p3.title">Base de datos para un hospital</span>
+            <span class="w-area" data-i18n="p3.area">Bases de datos</span>
             <span class="w-plus" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
-            <p>Modelo entidad-relación, tablas, usuarios, roles, permisos y copias de seguridad en PostgreSQL.</p>
+            <p data-i18n="p3.txt">Modelo entidad-relación, tablas, usuarios, roles, permisos y copias de seguridad en PostgreSQL.</p>
             <ul class="w-stack"><li><svg class="ico i-postgresql" aria-hidden="true"><use href="#i-postgresql"/></svg><span>PostgreSQL</span></li><li><svg class="ico i-db" aria-hidden="true"><use href="#i-db"/></svg><span>SQL</span></li><li><svg class="ico i-db" aria-hidden="true"><use href="#i-db"/></svg><span>pgAdmin</span></li></ul>
-            <a class="btn btn-line small" href="https://github.com/Tortuanapai" target="_blank" rel="noopener"><svg class="ico i-github" aria-hidden="true"><use href="#i-github"/></svg> Ver en GitHub ↗</a>
+            <a class="btn btn-line small" href="https://github.com/Tortuanapai" target="_blank" rel="noopener"><svg class="ico i-github" aria-hidden="true"><use href="#i-github"/></svg> <span data-i18n="p3.github">Ver en GitHub ↗</span></a>
           </div>
         </details>
       </li>
@@ -432,12 +444,12 @@
         <details>
           <summary>
             <span class="w-idx">04</span>
-            <span class="w-title">Sitio web responsive</span>
-            <span class="w-area">Desarrollo web</span>
+            <span class="w-title" data-i18n="p4.title">Sitio web responsive</span>
+            <span class="w-area" data-i18n="p4.area">Desarrollo web</span>
             <span class="w-plus" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
-            <p>Maquetación con HTML5 y CSS3 y publicación de contenidos con un CMS.</p>
+            <p data-i18n="p4.txt">Maquetación con HTML5 y CSS3 y publicación de contenidos con un CMS.</p>
             <ul class="w-stack"><li><svg class="ico i-html5" aria-hidden="true"><use href="#i-html5"/></svg><span>HTML5</span></li><li><svg class="ico i-css3" aria-hidden="true"><use href="#i-css3"/></svg><span>CSS3</span></li><li><svg class="ico i-cms" aria-hidden="true"><use href="#i-cms"/></svg><span>CMS</span></li></ul>
           </div>
         </details>
@@ -446,12 +458,12 @@
         <details>
           <summary>
             <span class="w-idx">05</span>
-            <span class="w-title">Mantenimiento de equipos</span>
-            <span class="w-area">Soporte</span>
+            <span class="w-title" data-i18n="p5.title">Mantenimiento de equipos</span>
+            <span class="w-area" data-i18n="p5.area">Soporte</span>
             <span class="w-plus" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
-            <p>Diagnóstico de hardware, instalación de sistemas operativos y clonación de equipos.</p>
+            <p data-i18n="p5.txt">Diagnóstico de hardware, instalación de sistemas operativos y clonación de equipos.</p>
             <ul class="w-stack"><li><svg class="ico i-disk" aria-hidden="true"><use href="#i-disk"/></svg><span>Clonezilla</span></li><li><svg class="ico i-windows" aria-hidden="true"><use href="#i-windows"/></svg><span>Windows</span></li><li><svg class="ico i-linux" aria-hidden="true"><use href="#i-linux"/></svg><span>Linux</span></li></ul>
           </div>
         </details>
@@ -459,7 +471,7 @@
     </ol>
 
     <a class="repo-card spot" href="https://github.com/Tortuanapai" target="_blank" rel="noopener">
-      <span class="repo-k">Repositorios</span>
+      <span class="repo-k" data-i18n="repos">Repositorios</span>
       <span class="repo-v"><svg class="ico i-github" aria-hidden="true"><use href="#i-github"/></svg> github.com/Tortuanapai</span>
       <span class="repo-go" aria-hidden="true">↗</span>
     </a>
@@ -470,19 +482,19 @@
 <section id="contacto" class="band contact">
   <header class="band-head">
     <p class="num">06</p>
-    <h2>Contacto</h2>
+    <h2 data-i18n="nav.contacto">Contacto</h2>
   </header>
 
   <div class="band-body">
-    <p class="contact-big">¿<span class="grad">Hablamos</span>?</p>
-    <p class="contact-lead">Zona de Blanes, Selva y Maresme. Respondo rápido.</p>
+    <p class="contact-big" data-i18n="contact.big">¿<span class="grad">Hablamos</span>?</p>
+    <p class="contact-lead" data-i18n="contact.lead">Zona de Blanes, Selva y Maresme. Respondo rápido.</p>
 
     <div class="contact-rows">
       <a class="crow" href="mailto:pau20470@gmail.com?subject=Contacto%20%E2%80%94%20Pau%20Alarc%C3%B3n">
         <span class="crow-k">Email</span><span class="crow-v">pau20470@gmail.com</span><span class="crow-go" aria-hidden="true">↗</span>
       </a>
       <a class="crow" href="tel:+34644562230">
-        <span class="crow-k">Teléfono</span><span class="crow-v">644 562 230</span><span class="crow-go" aria-hidden="true">↗</span>
+        <span class="crow-k" data-i18n="contact.phone">Teléfono</span><span class="crow-v">644 562 230</span><span class="crow-go" aria-hidden="true">↗</span>
       </a>
       <a class="crow" href="https://www.linkedin.com/in/pau-alarcon-ruiz-4a1424437/" target="_blank" rel="noopener">
         <span class="crow-k">LinkedIn</span><span class="crow-v"><svg class="ico i-linkedin" aria-hidden="true"><use href="#i-linkedin"/></svg> Pau Alarcón Ruiz</span><span class="crow-go" aria-hidden="true">↗</span>
@@ -491,7 +503,7 @@
         <span class="crow-k">GitHub</span><span class="crow-v"><svg class="ico i-github" aria-hidden="true"><use href="#i-github"/></svg> Tortuanapai</span><span class="crow-go" aria-hidden="true">↗</span>
       </a>
       <button class="crow" id="pdfRow">
-        <span class="crow-k">Currículum</span><span class="crow-v">Descargar en PDF</span><span class="crow-go" aria-hidden="true">↓</span>
+        <span class="crow-k" data-i18n="contact.cv">Currículum</span><span class="crow-v" data-i18n="pdf.download">Descargar en PDF</span><span class="crow-go" aria-hidden="true">↓</span>
       </button>
     </div>
   </div>
@@ -501,23 +513,24 @@
 
 <footer class="foot">
   <span>© <span id="year">2026</span> Pau Alarcón</span>
-  <span class="foot-mid">Sistemas y Redes · Becario IT en HardySoft</span>
-  <a href="#inicio">Volver arriba ↑</a>
+  <span class="foot-mid" data-i18n="foot.mid">Sistemas y Redes · Becario IT en HardySoft</span>
+  <a href="#inicio" data-i18n="foot.top">Volver arriba ↑</a>
 </footer>
 
 <!-- ============ PALETA DE COMANDOS ============ -->
 <div class="palette" id="palette" role="dialog" aria-modal="true" aria-labelledby="paletteLabel" hidden>
   <div class="palette-backdrop" data-close></div>
   <div class="palette-box">
-    <label class="sr-only" id="paletteLabel" for="paletteInput">Buscar sección o acción</label>
-    <input id="paletteInput" type="text" placeholder="Ir a una sección o ejecutar una acción…" autocomplete="off" spellcheck="false" />
+    <label class="sr-only" id="paletteLabel" for="paletteInput" data-i18n="palette.label">Buscar sección o acción</label>
+    <input id="paletteInput" type="text" placeholder="Ir a una sección o ejecutar una acción…" data-i18n-attr="placeholder:palette.placeholder" autocomplete="off" spellcheck="false" />
     <ul id="paletteList" role="listbox" aria-labelledby="paletteLabel"></ul>
-    <p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> moverse · <kbd>Enter</kbd> abrir · <kbd>Esc</kbd> cerrar</p>
+    <p class="palette-hint" data-i18n="palette.hint"><kbd>↑</kbd><kbd>↓</kbd> moverse · <kbd>Enter</kbd> abrir · <kbd>Esc</kbd> cerrar</p>
   </div>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

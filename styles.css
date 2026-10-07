@@ -155,6 +155,25 @@ body::before {
   border-radius: 50%; background: var(--accent);
 }
 
+.rail-top { display: grid; gap: 1.1rem; justify-items: start; }
+
+/* Selector de idioma: ES · CA · EN */
+.lang {
+  display: inline-flex; gap: 2px; padding: 2px;
+  height: 2.3rem;
+  border: 1px solid var(--rule); border-radius: 6px;
+}
+.lang button {
+  min-width: 2.1rem; padding: 0 0.45rem;
+  border-radius: 4px;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--ink-3);
+  transition: color 0.2s, background 0.2s;
+}
+.lang button:hover { color: var(--ink); background: var(--paper-3); }
+.lang button[aria-pressed="true"] { color: var(--accent-txt); background: var(--accent-bg); }
+@media (max-width: 380px) { .lang button { min-width: 1.8rem; padding: 0 0.3rem; } }
+
 .rail-nav ol { counter-reset: none; display: grid; gap: 0.1rem; }
 .rail-nav a {
   display: flex; align-items: baseline; gap: 0.7rem;

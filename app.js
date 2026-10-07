@@ -19,6 +19,91 @@
     }
   }
 
+  /* ---------- Idioma: castellano, catalán e inglés ----------
+     El castellano se lee del HTML; el resto sale de i18n.js. */
+  var I18N = window.CV_I18N || {};
+  var LANGS = ["es", "ca", "en"];
+  var lang = "es";
+  var esText = {};
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var i18nNodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n]"));
+  var i18nAttrNodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n-attr]"));
+
+  function attrPairs(el) {
+    return el.getAttribute("data-i18n-attr").split(",").map(function (pair) {
+      var parts = pair.split(":");
+      return { attr: parts[0].trim(), key: parts[1].trim() };
+    });
+  }
+
+  i18nNodes.forEach(function (el) {
+    var key = el.getAttribute("data-i18n");
+    el._i18nEs = el.innerHTML;
+    if (!(key in esText)) esText[key] = el.innerHTML;
+  });
+  i18nAttrNodes.forEach(function (el) {
+    el._i18nEs = {};
+    attrPairs(el).forEach(function (pair) {
+      var value = el.getAttribute(pair.attr) || "";
+      el._i18nEs[pair.attr] = value;
+      if (!(pair.key in esText)) esText[pair.key] = value;
+    });
+  });
+  esText["meta.title"] = document.title;
+  if (metaDesc) esText["meta.desc"] = metaDesc.getAttribute("content");
+
+  function t(key) {
+    var table = I18N[lang] || {};
+    if (lang !== "es" && key in table) return table[key];
+    if (key in esText) return esText[key];
+    return (I18N.es && I18N.es[key]) || key;
+  }
+
+  function detectLang() {
+    var saved = store("cv-lang");
+    if (LANGS.indexOf(saved) !== -1) return saved;
+    var prefs = navigator.languages || [navigator.language || ""];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = String(prefs[i]).slice(0, 2).toLowerCase();
+      if (LANGS.indexOf(code) !== -1) return code;
+    }
+    return "es";
+  }
+
+  function setLang(next, persist) {
+    if (LANGS.indexOf(next) === -1) next = "es";
+    lang = next;
+    root.setAttribute("lang", next);
+
+    i18nNodes.forEach(function (el) {
+      el.innerHTML = next === "es" ? el._i18nEs : t(el.getAttribute("data-i18n"));
+    });
+    i18nAttrNodes.forEach(function (el) {
+      attrPairs(el).forEach(function (pair) {
+        el.setAttribute(pair.attr, next === "es" ? el._i18nEs[pair.attr] : t(pair.key));
+      });
+    });
+    document.title = t("meta.title");
+    if (metaDesc) metaDesc.setAttribute("content", t("meta.desc"));
+
+    Array.prototype.forEach.call(document.querySelectorAll("[data-lang]"), function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === next ? "true" : "false");
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".sk-word[data-level]"), function (word) {
+      word.textContent = levelWord(parseInt(word.getAttribute("data-level"), 10));
+    });
+    if (typeof palette !== "undefined" && palette && !palette.hidden) render(input.value);
+
+    if (persist) store("cv-lang", next);
+  }
+
+  document.addEventListener("click", function (event) {
+    var btn = event.target.closest("[data-lang]");
+    if (btn) setLang(btn.getAttribute("data-lang"), true);
+  });
+
+  setLang(detectLang(), false);
+
   /* ---------- Año del pie ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -37,7 +122,7 @@
     var next = currentTheme() === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
     store("cv-theme", next);
-    toast(next === "dark" ? "Tema oscuro" : "Tema claro");
+    toast(t(next === "dark" ? "theme.dark" : "theme.light"));
   }
 
   ["themeBtn", "themeBtnM"].forEach(function (id) {
@@ -70,16 +155,16 @@
       field.select();
       try {
         document.execCommand("copy");
-        toast("Copiado: " + text);
+        toast(t("copied") + text);
       } catch (e) {
-        toast("Copia manual: " + text);
+        toast(t("copy.manual") + text);
       }
       document.body.removeChild(field);
     }
 
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(function () {
-        toast("Copiado: " + text);
+        toast(t("copied") + text);
       }, fallback);
     } else {
       fallback();
@@ -103,9 +188,9 @@
   /* ---------- Matriz de competencias: puntos ---------- */
   var TOTAL_DOTS = 10;
   function levelWord(level) {
-    if (level >= 88) return "Avanzado";
-    if (level >= 75) return "Sólido";
-    return "En desarrollo";
+    if (level >= 88) return t("level.adv");
+    if (level >= 75) return t("level.solid");
+    return t("level.dev");
   }
 
   Array.prototype.forEach.call(document.querySelectorAll(".matrix-col li[data-level]"), function (item) {
@@ -127,6 +212,7 @@
 
     var word = document.createElement("span");
     word.className = "sk-word";
+    word.setAttribute("data-level", String(level));
     word.textContent = levelWord(level);
 
     foot.appendChild(dots);
@@ -248,25 +334,37 @@
   var active = 0;
   var visible = [];
 
+  /* key: clave de i18n.js · extra: texto fijo detrás · text: etiqueta sin traducir */
   var commands = [
-    { num: "01", label: "Perfil", kind: "Sección", run: function () { go("#perfil"); } },
-    { num: "02", label: "Experiencia en HardySoft", kind: "Sección", run: function () { go("#experiencia"); } },
-    { num: "03", label: "Formación", kind: "Sección", run: function () { go("#formacion"); } },
-    { num: "04", label: "Competencias técnicas", kind: "Sección", run: function () { go("#competencias"); } },
-    { num: "05", label: "Proyectos", kind: "Sección", run: function () { go("#proyectos"); } },
-    { num: "06", label: "Contacto", kind: "Sección", run: function () { go("#contacto"); } },
-    { num: "@", label: "Copiar email: pau20470@gmail.com", kind: "Acción", run: function () { copy("pau20470@gmail.com"); } },
-    { num: "#", label: "Copiar teléfono: 644 562 230", kind: "Acción", run: function () { copy("644 562 230"); } },
-    { num: "✉", label: "Escribir un email", kind: "Enlace", run: function () { window.location.href = "mailto:pau20470@gmail.com"; } },
-    { num: "☎", label: "Llamar al 644 562 230", kind: "Enlace", run: function () { window.location.href = "tel:+34644562230"; } },
-    { num: "↗", label: "Abrir LinkedIn", kind: "Enlace", run: function () { window.open("https://www.linkedin.com/in/pau-alarcon-ruiz-4a1424437/", "_blank", "noopener"); } },
-    { num: "↗", label: "Abrir GitHub (Tortuanapai)", kind: "Enlace", run: function () { window.open("https://github.com/Tortuanapai", "_blank", "noopener"); } },
-    { num: "↗", label: "Abrir la web de HardySoft", kind: "Enlace", run: function () { window.open("https://www.hardysoft.es/", "_blank", "noopener"); } },
-    { num: "⌄", label: "Abrir todos los proyectos", kind: "Acción", run: function () { setWork(true); toast("Proyectos desplegados"); } },
-    { num: "⌃", label: "Cerrar todos los proyectos", kind: "Acción", run: function () { setWork(false); toast("Proyectos plegados"); } },
-    { num: "◐", label: "Cambiar tema claro u oscuro", kind: "Acción", run: toggleTheme },
-    { num: "⎙", label: "Descargar el currículum en PDF", kind: "Acción", run: print }
+    { num: "01", key: "nav.perfil", kind: "section", run: function () { go("#perfil"); } },
+    { num: "02", key: "cmd.xp", kind: "section", run: function () { go("#experiencia"); } },
+    { num: "03", key: "nav.formacion", kind: "section", run: function () { go("#formacion"); } },
+    { num: "04", key: "cmd.skills", kind: "section", run: function () { go("#competencias"); } },
+    { num: "05", key: "nav.proyectos", kind: "section", run: function () { go("#proyectos"); } },
+    { num: "06", key: "nav.contacto", kind: "section", run: function () { go("#contacto"); } },
+    { num: "@", key: "cmd.copyEmail", extra: "pau20470@gmail.com", kind: "action", run: function () { copy("pau20470@gmail.com"); } },
+    { num: "#", key: "cmd.copyPhone", extra: "644 562 230", kind: "action", run: function () { copy("644 562 230"); } },
+    { num: "✉", key: "cmd.mail", kind: "link", run: function () { window.location.href = "mailto:pau20470@gmail.com"; } },
+    { num: "☎", key: "cmd.call", extra: "644 562 230", kind: "link", run: function () { window.location.href = "tel:+34644562230"; } },
+    { num: "↗", key: "cmd.linkedin", kind: "link", run: function () { window.open("https://www.linkedin.com/in/pau-alarcon-ruiz-4a1424437/", "_blank", "noopener"); } },
+    { num: "↗", key: "cmd.github", kind: "link", run: function () { window.open("https://github.com/Tortuanapai", "_blank", "noopener"); } },
+    { num: "↗", key: "cmd.hardysoft", kind: "link", run: function () { window.open("https://www.hardysoft.es/", "_blank", "noopener"); } },
+    { num: "⌄", key: "cmd.expand", kind: "action", run: function () { setWork(true); toast(t("cmd.expanded")); } },
+    { num: "⌃", key: "cmd.collapse", kind: "action", run: function () { setWork(false); toast(t("cmd.collapsed")); } },
+    { num: "◐", key: "theme.toggle", kind: "action", run: toggleTheme },
+    { num: "⎙", key: "cmd.pdf", kind: "action", run: print },
+    { num: "ES", text: "Ver en castellano", kind: "lang", run: function () { setLang("es", true); } },
+    { num: "CA", text: "Veure en català", kind: "lang", run: function () { setLang("ca", true); } },
+    { num: "EN", text: "View in English", kind: "lang", run: function () { setLang("en", true); } }
   ];
+
+  function labelOf(command) {
+    return command.text || t(command.key) + (command.extra || "");
+  }
+
+  function kindOf(command) {
+    return t("kind." + command.kind);
+  }
 
   function go(hash) {
     var target = document.querySelector(hash);
@@ -292,14 +390,14 @@
     if (!list) return;
     var needle = normalize(query.trim());
     visible = commands.filter(function (command) {
-      return !needle || normalize(command.label + " " + command.kind).indexOf(needle) !== -1;
+      return !needle || normalize(labelOf(command) + " " + kindOf(command)).indexOf(needle) !== -1;
     });
 
     list.innerHTML = "";
     if (!visible.length) {
       var empty = document.createElement("li");
       empty.className = "p-empty";
-      empty.textContent = "Sin resultados";
+      empty.textContent = t("palette.empty");
       list.appendChild(empty);
       return;
     }
@@ -312,8 +410,8 @@
       row.innerHTML =
         '<span class="p-num"></span><span class="p-label"></span><span class="p-kind"></span>';
       row.querySelector(".p-num").textContent = command.num;
-      row.querySelector(".p-label").textContent = command.label;
-      row.querySelector(".p-kind").textContent = command.kind;
+      row.querySelector(".p-label").textContent = labelOf(command);
+      row.querySelector(".p-kind").textContent = kindOf(command);
       row.addEventListener("mouseenter", function () {
         select(index);
       });
